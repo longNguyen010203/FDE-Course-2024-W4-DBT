@@ -1,0 +1,21 @@
+version: "3.9"
+
+
+services:
+  de_psql:
+    image: postgres:15
+    container_name: de_psql
+    volumes:
+      - ./postgresql:/var/lib/postgresql/data
+      - ./dataset/brazilian-ecommerce:/tmp/brazilian-ecommerce
+      - ./load_dataset:/tmp/load_dataset
+    ports:
+      - "5432:5432"
+    env_file: .env
+    networks:
+      - de_network
+
+
+networks:
+  de_network:
+    driver: bridge
