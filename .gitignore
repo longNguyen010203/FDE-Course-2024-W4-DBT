@@ -1,10 +1,9 @@
 dbt-venv/
 
 postgresql/
-
 dataset/
-
 logs/
 
 target/
 .env/
+seeds/

@@ -33,5 +33,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   brazillian_ecom:
     # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
+    # example:
+    #   +materialized: view
+    analytics:
+      materialized: view

@@ -21,9 +21,3 @@ psql_load:
 
 to_psql:
 	docker exec -it de_psql psql postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
-
-export_env:
-	export $(grep -v '^#' env | xargs)
-
-run:
-	dbt run ./brazillian_ecom
