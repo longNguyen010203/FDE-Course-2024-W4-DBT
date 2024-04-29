@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: ecommerce
+    schema: public
+    database: brazillian_ecommerce
+    tables:
+      - name: olist_order_items_dataset
+      - name: olist_order_payments_dataset
+      - name: olist_orders_dataset
+      - name: olist_products_dataset

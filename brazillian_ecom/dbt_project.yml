@@ -31,10 +31,16 @@ clean-targets:         # directories to be removed by `dbt clean`
 # directory as views. These settings can be overridden in the individual model
 # files using the `{{ config(...) }}` macro.
 models:
-  brazillian_ecom:
-    # Config indicated by + and applies to all files under models/example/
-    # example:
-    #   +materialized: view
-    brazillian_ecommerce:
+  brazillian_ecommerce:
+    bronze:
       +materialized: view
+      +schema: analytics
+    silver:
+      +materialized: view
+      +schema: analytics
+    gold:
+      +materialized: table
+      +schema: analytics
+    analytics:
+      +materialized: table
       +schema: analytics

@@ -1,2 +1,2 @@
 SELECT *
-FROM public.olist_orders_dataset
+FROM {{ source("ecommerce", "olist_orders_dataset") }}

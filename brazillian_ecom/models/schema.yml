@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: raw_order_items
+    description: "Order items data"
+    columns:
+      - name: order_item_id
+        description: "The primary key for this table"
+        tests:
+          - accepted_values:
+              values: [11,8,19,4,21,14,3,17,20,13,10,9,7,1,5,18,2,16,15,6,12]
+      - name: product_id
+        description: ""
+        tests:
+          - not_null
+  
+  - name: raw_order_payments
+    description: "Order payments data"
+    columns:
+      - name: order_id
+        description: "The primary key for this table"
+        tests: 
+          - not_null
+      - name: payment_type
+        description: ""
+        tests:
+          - accepted_values:
+              values: ["not_defined", "boleto", "debit_card", "voucher", "credit_card"]
+
+  - name: raw_orders
+    description: "Order data"
+    columns:
+      - name: customer_id
+        description: "The primary key for this table"
+        tests: 
+          - unique
+          - not_null
+      - name: order_status
+        description: ""
+        tests:
+          - accepted_values:
+              values: ["shipped","unavailable","invoiced","created","approved","processing","delivered","canceled"]
+
+  - name: raw_products
+    description: "Order product data"
+    columns:
+      - name: product_id
+        description: "The primary key for this table"
+        tests: 
+          - unique
+          - not_null

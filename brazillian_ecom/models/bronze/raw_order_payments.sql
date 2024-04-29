@@ -1,2 +1,2 @@
 SELECT *
-FROM public.olist_order_payments_dataset
+FROM {{ source("ecommerce", "olist_order_payments_dataset") }}
